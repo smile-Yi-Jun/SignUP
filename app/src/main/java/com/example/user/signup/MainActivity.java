@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,11 +30,16 @@ public class MainActivity extends AppCompatActivity {
         String passWord = etPassword.getText().toString();
         String phoneNumber = etPhone.getText().toString();
         String emailAddress = etEmail.getText().toString();
+        String regId = getRanId();
 
         Toast.makeText(this, "Signing up...", Toast.LENGTH_SHORT).show();
-        new SignupActivity(this).execute(fullName, userName, passWord, phoneNumber, emailAddress);
+        new SignupActivity(this).execute(fullName, userName, passWord, phoneNumber, emailAddress,regId);
     }
 
+    public String getRanId()
+    {
+        return"abc123";
+    }
 
 
 }
