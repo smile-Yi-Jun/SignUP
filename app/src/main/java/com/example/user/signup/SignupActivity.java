@@ -74,7 +74,10 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
                     Toast.makeText(context, "Data inserted successfully. Signup successful.", Toast.LENGTH_SHORT).show();
                 } else if (query_result.equals("FAILURE")) {
                     Toast.makeText(context, "Data could not be inserted. Signup failed.", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else if (query_result.equals("DUPLICATE")) {
+                    Toast.makeText(context, "重複紀錄", Toast.LENGTH_SHORT).show();
+                }else {
                     Toast.makeText(context, "Couldn't connect to remote database.", Toast.LENGTH_SHORT).show();
                 }
             }
